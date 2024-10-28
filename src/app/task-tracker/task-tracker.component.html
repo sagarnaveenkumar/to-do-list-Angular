@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="head">
+    <div class="form-body">
+      <h1>Track Your Tasks for Today</h1>
+
+      <form class="form1" (ngSubmit)="submit()">
+        <input [(ngModel)]="email" class="email" required name="email" placeholder="Enter email@gmail.com" />&nbsp;
+
+        <button type="submit" class="get" name="submit">Get Your Tasks</button>&nbsp;
+
+        <button type="button" class="Add" (click)="navigatetoadd()">Add Tasks</button>  
+      </form>
+    </div>
+  </div>
+  
+  <!-- displaying tasks -->
+  <div class="tasks">
+    <div *ngFor="let task of tasks">
+      <div class="sliding-window">
+        <p class="text-success">{{ task.task_name}}</p>
+        <div class="time">
+          <p>#{{task.task_id}} Created_at: {{ task.created_at |date:"medium" }}</p>
+        </div>
+        <div class="up-time">
+          <p>Updated_at: {{ task.updated_at |date:"medium"}}</p>
+        </div>
+      </div>
+      <div class="card4"> 
+        {{ task.description }}
+      </div>
+      <div class="d-flex justify-content-between mt-2">
+        <div class="btn-status">
+          <button type="button" role="button" class="btn-success" *ngIf="task.status=='completed';else pending">completed</button>
+          <ng-template #pending>
+            <button type="button" role="button" class="btn-failure">pending</button>
+          </ng-template>
+        </div>
+ 
+        <div class="btn-danger-delete" style="margin-left: 7cm;">
+          <button type="button" role="alert" class="btn-danger" (click)="delete(task)">Delete</button>
+        </div>
+        <div class="btn-btn-update">
+          <button type="button" role="button" class="btn-update" (click)="editeTask(task)">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+  
+  <!-- Insert new task in pop-up window -->
+  <div class="form2" *ngIf="pop"  >
+    <form class="form3" (ngSubmit)="sent()">
+      <div class="form-group" style=" margin-left: 7cm; cursor: pointer;" (click)="close()">
+        &timesb;
+      </div>
+      <span style='font-size:0.8cm;margin-top: -1cm;cursor: pointer;' (click)="back()">&#8701;</span>
+
+      <span class="heading">Creating Task</span>
+
+      <div class="form-group">
+        <input class="form-input" required [(ngModel)]="user" name="user_id"  />
+        <label>Email</label>
+      </div>
+
+      <div class="form-group">
+        <input class="form-input" required [(ngModel)]="task_name" name="task_id"/>
+        <label style="text-transform: capitalize;">Task Name</label>
+      </div>
+
+      <div class="form-group">
+        <input class="form-input" required [(ngModel)]="description" name="description" />
+        <label style="text-transform: capitalize;">Description</label>
+      </div>
+  
+      <div class="group">
+  
+        <select name="status-list" id="status-list" class="select" required [(ngModel)]="status" name="status" l>
+          <option value="choose an option" selected>choose an option</option>
+          <option value="completed">completed</option>
+          <option value="pending">pending</option>
+        </select>
+      </div>
+      <button type="sent" class="insert">Submit</button>
+    </form>
+  </div> 
+  
+  <div *ngIf="message" class="message">
+    {{ message }}
+  </div>
+
+</div>

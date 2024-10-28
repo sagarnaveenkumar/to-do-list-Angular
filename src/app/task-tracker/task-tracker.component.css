@@ -1,0 +1,273 @@
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+/* main content */
+.head{
+  margin: auto;
+  padding: auto;
+}
+  
+.form-body{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+}
+
+h1{
+  text-align: center;
+  height: 1.5cm;
+  color: #0f0f0f;
+  font-family: Allura;
+}
+    
+.email{
+  height: 0.7cm;
+  width: 8cm;
+  border: 1px solid;
+  border-radius: 0.2cm;
+  text-transform: capitalize;
+  font-size: medium;
+  font-style: italic;
+}
+  
+.email:focus {
+  box-shadow: -3px -3px 15px rgb(0, 255, 255);
+  transition: .1s;
+  transition-property: box-shadow;
+}
+  
+.get{
+  height: 0.8cm;
+  width: 3cm;
+  border: 1px solid;
+  border-radius: 0.2cm;
+  background: none;
+  color: rgba(96, 81, 81, 0.99);
+  font-weight: 300;
+  cursor: pointer;
+}
+  
+.get:focus{
+  box-shadow: -3px -3px 15px rgb(0, 255, 225);
+  transition: .2s;
+}
+    
+.Add{
+  height: 0.8cm;
+  width: 3cm;
+  border: 1px solid;
+  border-radius: 0.2cm;
+  background: none;
+  color: rgb(141, 120, 120);
+  cursor: pointer;
+}
+    
+.Add:focus{
+  box-shadow: -3px -3px 15px rgb(144, 0, 255);
+  transition: .2s;
+}
+    
+.message{
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  color: rgb(252, 3, 3);
+  margin-top: 5cm;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: larger;
+  overflow: hidden;
+}
+  
+/* pop up window style*/
+.tasks {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px;
+}
+  
+.tasks > div {
+  margin: 10px;
+  width: 600px;
+  border: 1px solid #c7c6c6;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #b1b3b149; 
+}
+  
+.time{
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1.8cm 3.5cm;
+  margin-right: 7cm;
+}
+  
+.up-time{
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5cm 10cm 0cm;
+  width: 8cm;
+}
+  
+.up-time>p{
+  margin-right: 3cm;
+}
+  
+.text-success {
+  color: #016f15;
+  font-weight: bold;
+  font-size: large;
+  text-transform: capitalize;
+  margin-right: 13cm;
+}
+  
+.card4 {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0cm -0.4cm;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: #f34343f6;
+}
+  
+.d-flex {
+  display: flex;
+  justify-content: space-between  ;
+  align-items: center;
+}
+  
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+  border: 1px solid;
+  border-radius: 0.2cm;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+  
+.btn-failure {
+  background-color: #dc3545;
+  color: #fff;
+  border: 1px solid;
+  border-radius: 0.2cm;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+  
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: 1px solid;
+  border-radius: 0.2cm;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;  
+}
+  
+.btn-update {
+  background-color: #337ab7;
+  color: #fff;
+  border: 1px solid;
+  border-radius: 0.2cm;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+  
+/* display content */
+.form2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+.form3{
+  height: 100%;
+  width: 10cm;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4cm;
+  margin-top: 0.5cm;
+  color: #fff;
+  background-color: #9d9a9a3c;
+  border: 1px solid;
+  padding: 10px 20px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+    
+.heading{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: large;
+  color: rgb(8, 8, 8);
+}
+    
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #f50404;
+  position: relative;
+}
+  
+.form-group input{
+  background: none;
+  border: 1px solid;
+  height: 0.8cm;
+  border-radius: 1cm;
+  text-transform: capitalize;
+  color: rgb(19, 19, 19);
+}
+    
+.form-group label {
+  position: absolute;
+  padding: 8px;
+  pointer-events: none;
+  transition: 5ms;
+}
+    
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+  top: -16px;
+  left: 0;
+  padding: 10px 0 0 0;
+  color: #141212;
+  font-size: 15px;
+}
+  
+.insert{
+  height: 0.8cm;
+  width: 2.54cm;
+  text-transform: capitalize;
+  margin-left: 2.6cm;
+  border: 1px solid;
+  border-radius: 1cm;
+  background: none;
+  transition: 0.2ms;
+}
+  
+.insert:hover{
+  background: rgba(187, 248, 5, 0.866);
+}
+  
+.group, select{
+  height: 1cm;
+  width: 8cm;
+}
